@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-gym-text font-poppins antialiased;
+    background-color: #2D1843;
+    background-image:
+      radial-gradient(circle at 12% 10%, rgba(139, 90, 184, 0.22), transparent 40%),
+      radial-gradient(circle at 88% 82%, rgba(243, 184, 208, 0.14), transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(74, 37, 112, 0.4), transparent 70%),
+      linear-gradient(180deg, #2D1843 0%, #361D52 50%, #2D1843 100%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-gym-pink/40 text-gym-text;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: '"Bebas Neue"', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Scroll-reveal: hidden until .is-visible is added */
+  .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+  .reveal-delay-4 { transition-delay: 0.48s; }
+
+  .glass {
+    background: rgba(84, 43, 120, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .glass-dark {
+    background: rgba(42, 21, 66, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #2A1542;
+}
+::-webkit-scrollbar-thumb {
+  background: #6B3A9A;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5AB8;
+}
